@@ -1,0 +1,9 @@
+{
+    "cmake.configureArgs": [
+        "-DUSE_FLOAT=ON"
+    ],
+    "files.associations": {
+        "*.cu": "cpp",
+        "*.cuh": "cpp"
+    }
+}
