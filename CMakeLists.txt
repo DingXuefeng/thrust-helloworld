@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-set(CMAKE_CUDA_FLAGS_DEBUG "${CMAKE_CUDA_FLAGS_DEBUG} -lineinfo --ptxas-options=-v -keep")
+set(CMAKE_CUDA_FLAGS_DEBUG "${CMAKE_CUDA_FLAGS_DEBUG} -lineinfo --ptxas-options=-v -keep --extended-lambda")
 set(CMAKE_CUDA_ARCHITECTURES "70;86") # Amphere for 3060 Ti
 
 find_package(Thrust REQUIRED CONFIG)
@@ -19,3 +19,6 @@ if(USE_FLOAT)
 endif()
 
 add_executable(get_compute_capability get_compute_capability.cu)
+
+add_executable(naive naive.cu)
+target_link_libraries(naive PRIVATE Thrust::Thrust)
