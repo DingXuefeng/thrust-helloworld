@@ -11,16 +11,11 @@
 #include <thrust/transform.h>
 #include <thrust/host_vector.h>
 #include <iostream>
+#include "libB.h"
 
-__device__ int libB(int x);
 __device__ int libA(int x) {
     return libB(x)+1;
 }
-struct libA_functor {
-    __device__ int operator()(int x) {
-        return libA(x);
-    }
-};
 
 void run()
 {

@@ -7,11 +7,9 @@
 //
 // All rights reserved. 2023 copyrighted.
 /*****************************************************************************/
-#include "libB.h"
+#pragma once
 
-__device__ int libB(int x) {
-    return x+1;
-}
-__device__ int libA_functor::operator()(int x) {
-    return libB(x);
-}
+__device__ int libB(int x);
+struct libA_functor {
+    __device__ int operator()(int x);
+};
