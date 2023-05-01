@@ -32,7 +32,7 @@
             "name": "CUDA C++: Launch",
             "type": "cuda-gdb",
             "request": "launch",
-            "program": "${workspaceFolder}/build/Thrust_HelloWorld"
+            "program": "${workspaceRoot}/build/separate2",
         },
         {
             "name": "CUDA C++: Attach",

@@ -1,6 +1,7 @@
 {
     "cmake.configureArgs": [
-        "-DUSE_FLOAT=ON"
+        "-DUSE_FLOAT=ON",
+        "-DCMAKE_VERBOSE_MAKEFILE=ON"
     ],
     "files.associations": {
         "*.cu": "cpp",
