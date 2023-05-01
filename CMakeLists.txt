@@ -5,7 +5,8 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-set(CMAKE_CUDA_FLAGS_DEBUG "${CMAKE_CUDA_FLAGS_DEBUG} -lineinfo --ptxas-options=-v -keep --extended-lambda")
+#set(CMAKE_CUDA_FLAGS_DEBUG "${CMAKE_CUDA_FLAGS_DEBUG} -lineinfo --ptxas-options=-v -keep --extended-lambda")
+set(CMAKE_CUDA_FLAGS_DEBUG "${CMAKE_CUDA_FLAGS_DEBUG} --extended-lambda")
 set(CMAKE_CUDA_ARCHITECTURES "70;86") # Amphere for 3060 Ti
 
 find_package(Thrust REQUIRED CONFIG)
