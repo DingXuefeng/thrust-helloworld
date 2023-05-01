@@ -35,7 +35,7 @@ target_link_libraries(separate PRIVATE libA)
 
 # in 1 lib: ok
 add_library(libgpu SHARED libA.cu libB.cu)
-target_link_libraries(libgpu PRIVATE libB Thrust::Thrust)
+target_link_libraries(libgpu PRIVATE Thrust::Thrust)
 
 add_executable(separate2 separate.cxx)
 target_link_libraries(separate2 PRIVATE libgpu)
