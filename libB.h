@@ -11,5 +11,8 @@
 
 __device__ int libB(int x);
 struct libA_functor {
+    libA_functor(int *a) : d_ptr(a) {}
     __device__ int operator()(int x);
+    int *d_ptr;
+    // thrust::device_vector<int> d_vec; // do not add this.
 };

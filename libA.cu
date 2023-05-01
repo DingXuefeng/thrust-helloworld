@@ -21,7 +21,8 @@ void run()
 {
     int a_init[]{1, 2, 3};
     thrust::device_vector<int> dev_a(a_init, a_init + 3);
-    libA_functor op;
+    // preserce device vector outside functor and do raw_pointer_cast before passing it to functor.
+    libA_functor op(thrust::raw_pointer_cast(dev_a.data()));
 
     // thrust::transform(dev_a.begin(), dev_a.end(), dev_a.begin(), libA); // not working
     thrust::transform(dev_a.begin(), dev_a.end(), dev_a.begin(), op); // ok

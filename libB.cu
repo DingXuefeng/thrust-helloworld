@@ -13,5 +13,5 @@ __device__ int libB(int x) {
     return x+1;
 }
 __device__ int libA_functor::operator()(int x) {
-    return libB(x);
+    return libB(x)+d_ptr[0]+d_ptr[1]+d_ptr[2];
 }
